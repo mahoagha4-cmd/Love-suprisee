@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>بۆ تۆ 🤍</title>
 
 <style>
@@ -33,7 +32,7 @@ body{
   opacity:.8;
 }
 
-.hearts span:nth-child(1){left:10%;animation-delay:0s}
+.hearts span:nth-child(1){left:10%}
 .hearts span:nth-child(2){left:25%;animation-delay:2s}
 .hearts span:nth-child(3){left:45%;animation-delay:4s}
 .hearts span:nth-child(4){left:65%;animation-delay:1s}
@@ -41,7 +40,7 @@ body{
 
 @keyframes float{
   0%{
-    transform:translateY(0) rotate(0deg);
+    transform:translateY(0) rotate(0);
     opacity:0;
   }
   20%{opacity:1}
@@ -61,19 +60,7 @@ body{
   border-radius:30px;
   backdrop-filter:blur(18px);
   box-shadow:0 25px 80px rgba(0,0,0,.5);
-  animation:appear 1.2s ease;
   z-index:2;
-}
-
-@keyframes appear{
-  from{
-    opacity:0;
-    transform:translateY(30px) scale(.9);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
 }
 
 .photo{
@@ -89,13 +76,11 @@ body{
 h1{
   font-size:30px;
   margin:8px 0 15px;
-  text-shadow:0 3px 15px rgba(255,100,180,.7);
 }
 
 .message{
   font-size:17px;
   line-height:2.1;
-  margin:0;
 }
 
 .question{
@@ -114,12 +99,6 @@ button{
   font-size:18px;
   font-weight:bold;
   cursor:pointer;
-  box-shadow:0 8px 25px rgba(255,255,255,.25);
-  transition:.3s;
-}
-
-button:hover{
-  transform:scale(1.06);
 }
 
 #answer{
@@ -127,18 +106,6 @@ button:hover{
   margin-top:20px;
   font-size:18px;
   line-height:2.2;
-  animation:heartAppear 1s ease;
-}
-
-@keyframes heartAppear{
-  from{
-    opacity:0;
-    transform:scale(.7);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
 }
 
 .bigheart{
@@ -172,13 +139,11 @@ button:hover{
 
   <p class="message">
     دەزانم لە من نارازی بوویت 🥺<br>
-    و دەزانم هەندێ جار مرۆڤ بە هەڵەیەکی بچووک
-    دڵی کەسێکی خۆشەویست دەشکێنێت...
+    ئەگەر هەڵەم کردووە، لێم خۆش ببە.<br>
+    تۆ بۆ من تەنها کەسێکی ئاسایی نیت،<br>
+    تۆ بەشێکی جوانی ژیانمی. 🤍
     <br><br>
-    بەڵام من نامەوێت دوور بیت لێم. 🤍
-    <br>
-    تۆ بۆ من تەنها کەسێکی ئاسایی نیت،
-    تۆ بەشێکی جوانی ژیانمی. 💕
+    ناتەوێت دوور بیت لێم... 💕
   </p>
 
   <div class="question">
@@ -190,10 +155,9 @@ button:hover{
   </button>
 
   <div id="answer">
-    <div class="bigheart">💖</div>
-    سوپاس بۆ ئەوەی دڵت بۆ من هێشتووەتەوە.<br>
-    بەڵێنم بدە دووبارە پێکەوە پێدەکەنین. 🤍<br>
-    <b>خۆشم دەوێیت زۆر زۆر. 💕</b>
+    <div class="bigheart">🤍</div>
+    سوپاس بۆ ئەوەی دڵت بۆ من هێشتووەتەوە. 🤍<br>
+    خۆشم دەوێیت زۆر زۆر. 💕
   </div>
 
 </div>
@@ -204,20 +168,21 @@ function showAnswer(){
 
   for(let i=0;i<15;i++){
     let heart=document.createElement("div");
-    heart.innerHTML="🤍";
-    heart.style.position="fixed";
-    heart.style.left=Math.random()*100+"%";
-    heart.style.top="60%";
-    heart.style.fontSize=(20+Math.random()*25)+"px";
-    heart.style.zIndex="10";
-    heart.style.transition="all 2s ease-out";
+
+    heart.innerHTML = "🤍";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random()*100+"%";
+    heart.style.top = "60%";
+    heart.style.fontSize = (20+Math.random()*25)+"px";
+    heart.style.zIndex = "10";
+    heart.style.transition = "all 2s ease-out";
 
     document.body.appendChild(heart);
 
     setTimeout(()=>{
-      heart.style.top=(10+Math.random()*50)+"%";
-      heart.style.opacity="0";
-      heart.style.transform="scale(1.8) rotate(30deg)";
+      heart.style.top = (10+Math.random()*50)+"%";
+      heart.style.opacity = "0";
+      heart.style.transform = "scale(1.8) rotate(30deg)";
     },50);
 
     setTimeout(()=>{
