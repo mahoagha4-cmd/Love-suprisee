@@ -3,105 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بۆ خۆشەویستەکەم ❤️</title>
+
+<title>بۆ تۆ ❤️</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Tahoma, Arial, sans-serif;
-  background: linear-gradient(135deg, #180d30, #8b3d7d, #173b75);
-  color: white;
-  overflow-x: hidden;
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(circle at top,#ff9ecf 0%,transparent 35%),
+    linear-gradient(135deg,#160b25,#641b50,#160b25);
+  color:white;
+  overflow:hidden;
 }
 
-.card {
-  width: 92%;
-  max-width: 430px;
-  padding: 20px;
-  text-align: center;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 28px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+.hearts span{
+  position:fixed;
+  bottom:-40px;
+  font-size:22px;
+  animation:float 7s linear infinite;
+  opacity:.8;
 }
 
-.photo {
-  width: 100%;
-  border-radius: 22px;
-  display: block;
-  margin-bottom: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+.hearts span:nth-child(1){left:10%;animation-delay:0s}
+.hearts span:nth-child(2){left:25%;animation-delay:2s}
+.hearts span:nth-child(3){left:45%;animation-delay:4s}
+.hearts span:nth-child(4){left:65%;animation-delay:1s}
+.hearts span:nth-child(5){left:82%;animation-delay:3s}
+
+@keyframes float{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  20%{opacity:1}
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
 }
 
-h1 {
-  font-size: 28px;
-  margin: 10px 0;
+.card{
+  width:92%;
+  max-width:430px;
+  padding:22px;
+  text-align:center;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:30px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 25px 80px rgba(0,0,0,.5);
+  animation:appear 1.2s ease;
+  z-index:2;
 }
 
-p {
-  font-size: 17px;
-  line-height: 2;
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(30px) scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
 }
 
-button {
-  border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
-  background: white;
-  color: #8b3d7d;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
+.photo{
+  width:100%;
+  max-height:430px;
+  object-fit:cover;
+  border-radius:25px;
+  display:block;
+  margin-bottom:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.45);
 }
 
-#answer {
-  display: none;
-  margin-top: 18px;
-  font-size: 18px;
-  line-height: 2;
+h1{
+  font-size:30px;
+  margin:8px 0 15px;
+  text-shadow:0 3px 15px rgba(255,100,180,.7);
+}
+
+.message{
+  font-size:17px;
+  line-height:2.1;
+  margin:0;
+}
+
+.question{
+  margin-top:20px;
+  font-size:19px;
+  font-weight:bold;
+}
+
+button{
+  margin-top:12px;
+  padding:15px 35px;
+  border:none;
+  border-radius:40px;
+  background:white;
+  color:#9b286d;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(255,255,255,.25);
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.06);
+}
+
+#answer{
+  display:none;
+  margin-top:20px;
+  font-size:18px;
+  line-height:2.2;
+  animation:heartAppear 1s ease;
+}
+
+@keyframes heartAppear{
+  from{
+    opacity:0;
+    transform:scale(.7);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.bigheart{
+  font-size:42px;
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.18)}
 }
 </style>
 </head>
 
 <body>
 
+<div class="hearts">
+  <span>❤️</span>
+  <span>💗</span>
+  <span>💕</span>
+  <span>💖</span>
+  <span>❤️</span>
+</div>
+
 <div class="card">
 
   <img src="photo.jpg" class="photo" alt="خۆشەویستەکەم">
 
-  <h1>بۆ خۆشەویستەکەم ❤️</h1>
+  <div class="bigheart">❤️</div>
 
-  <p>
-    دەزانم ڕەنگە دڵت لێم شکابێت 🥺<br>
-    ئەگەر هەڵەم کردووە، لێم خۆش ببە.<br>
-    تۆ زۆر گرنگیت بۆ من و ناتەوێم دڵت بشکێنم. ❤️
+  <h1>بۆ خۆشەویستەکەم</h1>
+
+  <p class="message">
+    دەزانم لە من نارازی بوویت 🥺<br>
+    و دەزانم هەندێ جار مرۆڤ بە هەڵەیەکی بچووک
+    دڵی کەسێکی خۆشەویست دەشکێنێت...
+    <br><br>
+    بەڵام من ناتەوێت دوور بیت لێم. ❤️
+    <br>
+    تۆ بۆ من تەنها کەسێکی ئاسایی نیت،
+    تۆ بەشێکی جوانی ژیانمی. 💕
   </p>
 
-  <p><b>تەنها یەک پرسیارم هەیە...</b></p>
+  <div class="question">
+    ئەتوانین دووبارە <b>ئاشت بینەوە؟</b> 🥺❤️
+  </div>
 
   <button onclick="showAnswer()">
-    ئاشت بینەوە؟ ❤️
+    ❤️ بەڵێ، ئاشت بینەوە
   </button>
 
   <div id="answer">
-    تکایە دڵم مەشکێنە... 🥺❤️<br>
-    من هەر تۆم خۆش دەوێت. ❤️
+    <div class="bigheart">💖</div>
+    سوپاس بۆ ئەوەی دڵت بۆ من هێشتووەتەوە.<br>
+    بەڵێنم بدە دووبارە پێکەوە پێدەکەنین. ❤️<br>
+    <b>خۆشم دەوێیت زۆر زۆر. 💕</b>
   </div>
 
 </div>
 
 <script>
-function showAnswer() {
-  document.getElementById("answer").style.display = "block";
+function showAnswer(){
+  document.getElementById("answer").style.display="block";
+
+  for(let i=0;i<15;i++){
+    let heart=document.createElement("div");
+    heart.innerHTML="❤️";
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.top="60%";
+    heart.style.fontSize=(20+Math.random()*25)+"px";
+    heart.style.zIndex="10";
+    heart.style.transition="all 2s ease-out";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.style.top=(10+Math.random()*50)+"%";
+      heart.style.opacity="0";
+      heart.style.transform="scale(1.8) rotate(30deg)";
+    },50);
+
+    setTimeout(()=>{
+      heart.remove();
+    },2200);
+  }
 }
 </script>
 
