@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بۆ خۆشەویستەکەم ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Tahoma, Arial, sans-serif;
+  background: linear-gradient(135deg, #180d30, #8b3d7d, #173b75);
+  color: white;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 92%;
+  max-width: 430px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 28px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.photo {
+  width: 100%;
+  border-radius: 22px;
+  display: block;
+  margin-bottom: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 17px;
+  line-height: 2;
+}
+
+button {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: white;
+  color: #8b3d7d;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#answer {
+  display: none;
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <img src="photo.jpg" class="photo" alt="خۆشەویستەکەم">
+
+  <h1>بۆ خۆشەویستەکەم ❤️</h1>
+
+  <p>
+    دەزانم ڕەنگە دڵت لێم شکابێت 🥺<br>
+    ئەگەر هەڵەم کردووە، لێم خۆش ببە.<br>
+    تۆ زۆر گرنگیت بۆ من و ناتەوێم دڵت بشکێنم. ❤️
+  </p>
+
+  <p><b>تەنها یەک پرسیارم هەیە...</b></p>
+
+  <button onclick="showAnswer()">
+    ئاشت بینەوە؟ ❤️
+  </button>
+
+  <div id="answer">
+    تکایە دڵم مەشکێنە... 🥺❤️<br>
+    من هەر تۆم خۆش دەوێت. ❤️
+  </div>
+
+</div>
+
+<script>
+function showAnswer() {
+  document.getElementById("answer").style.display = "block";
+}
+</script>
+
+</body>
+</html>
